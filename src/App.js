@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import StudentList from './StudentList';
 
 function App() {
+  const [students, setStudents] = useState([
+    { id: 1, name: 'Student 1', isPresent: false },
+    { id: 2, name: 'Student 2', isPresent: false },
+    { id: 3, name: 'Student 3', isPresent: false },
+    // ... Add more students
+  ]);
+
+  const handleAttendanceChange = (studentId) => {
+    setStudents((prevStudents) =>
+      prevStudents.map((student) =>
+        student.id === studentId
+          ? { ...student, isPresent: !student.isPresent }
+          : student
+      )
+    );
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Class Attendance System</h1>
+      <StudentList students={students} onAttendanceChange={handleAttendanceChange} />
     </div>
   );
 }
