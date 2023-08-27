@@ -1,3 +1,7 @@
+About
+The UI/UX of an attendance system for a class build using react.
+The entire students in a class will go to this UX, and mark their attendance.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
