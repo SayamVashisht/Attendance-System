@@ -1,29 +1,31 @@
 import React, { useState } from 'react';
 import './App.css';
 import StudentList from './StudentList';
+import StudentForm from './StudentForm';
 
 function App() {
-  const [students, setStudents] = useState([
-    { id: 1, name: 'Student 1', isPresent: false },
-    { id: 2, name: 'Student 2', isPresent: false },
-    { id: 3, name: 'Student 3', isPresent: false },
-    // ... Add more students
-  ]);
+  const [students, setStudents] = useState([]);
 
-  const handleAttendanceChange = (studentId) => {
+  const toggleAttendance = (studentId) => {
     setStudents((prevStudents) =>
       prevStudents.map((student) =>
-        student.id === studentId
-          ? { ...student, isPresent: !student.isPresent }
-          : student
+        student.id === studentId ? { ...student, isPresent: !student.isPresent } : student
       )
     );
+  };
+
+  const addStudent = (newStudent) => {
+    // Generate a unique ID for the new student
+    const id = students.length + 1;
+    const updatedStudents = [...students, { ...newStudent, id, isPresent: false }];
+    setStudents(updatedStudents);
   };
 
   return (
     <div className="App">
       <h1>Class Attendance System</h1>
-      <StudentList students={students} onAttendanceChange={handleAttendanceChange} />
+      <StudentForm addStudent={addStudent} />
+      <StudentList students={students} toggleAttendance={toggleAttendance} />
     </div>
   );
 }

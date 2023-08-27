@@ -1,25 +1,30 @@
-.App {
-  text-align: center;
-  margin: 20px;
-}
+/* Existing styles... */
 
-.student-list {
+.student-form {
+  border: 1px solid #ccc;
+  padding: 20px;
   margin-top: 20px;
+  background-color: #f0f0f0;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.student-form h2 {
+  margin-top: 0;
 }
 
-li {
-  margin: 5px 0;
+.student-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.present {
-  color: green;
+.student-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.absent {
-  color: red;
-}

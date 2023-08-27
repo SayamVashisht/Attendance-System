@@ -1,14 +1,16 @@
 import React from 'react';
 
-function StudentItem({ student, onAttendanceChange }) {
+function StudentItem({ student, toggleAttendance }) {
   return (
-    <li className={student.isPresent ? 'present' : 'absent'}>
-      {student.name}
-      <input
-        type="checkbox"
-        checked={student.isPresent}
-        onChange={() => onAttendanceChange(student.id)}
-      />
+    <li className={`student-item ${student.isPresent ? 'present' : 'absent'}`}>
+      <span className="student-info">
+        <span className="student-name">{student.name}</span>
+        <span className="student-class">{student.class}</span>
+        <span className="reg-number">Reg Number: {student.regNumber}</span>
+      </span>
+      <button onClick={() => toggleAttendance(student.id)}>
+        {student.isPresent ? 'Present' : 'Absent'}
+      </button>
     </li>
   );
 }
