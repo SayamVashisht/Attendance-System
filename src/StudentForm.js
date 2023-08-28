@@ -51,7 +51,11 @@ function StudentForm({ addStudent }) {
         onChange={handleChange}
         required
       />
+<<<<<<< HEAD
       <button type="submit" >Submit</button>
+=======
+      <button type="submit">Add</button>
+>>>>>>> 6812d58e505d897e97e9ffbc7b16d9c592b97338
     </form>
   );
 }
