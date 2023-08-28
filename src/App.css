@@ -1,38 +1,115 @@
+
 .App {
+  margin: 40px;
+}
+
+h1 {
   text-align: center;
+  background-image: url('Title.jpg');
+  background-size: contain;
+  background-position: bottom right;
+  padding: 30px;
+ }
+
+.terminal-text {
+  font-family: monospace;
+  font-size: 2rem;
+  position: relative;
+  color: #f0f0f0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.cursor {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  opacity: 1;
+  animation: typing 1s steps(1, end) infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes typing {
   from {
-    transform: rotate(0deg);
+    width: 0;
   }
   to {
-    transform: rotate(360deg);
+    width: calc(12px + 0.6ch);
   }
+}
+
+ul { 
+  padding: 0;
+}
+
+.student-item {
+  margin: 5px 0;
+  padding: 5px;
+  border: 2.3px solid #ccc;
+
+}
+
+.student-info {
+  display: flex;
+}
+
+.student-name {
+  font-size: 16px;
+  margin-top: 5px;
+  margin-right: 269px;
+  margin-left: 4px;
+}
+
+.student-class{
+  font-size: 16px;
+  margin-top: 5px;
+  margin-right: 270px;
+}
+
+.reg-number {
+  font-size: 16px;
+  margin-top: 5px;
+  margin-right: 270px;
+}
+
+
+
+
+.student-form {
+  border: 1px solid #ccc;
+  height: 400%;
+  padding: 80px;
+  margin-top: 15px;
+  background-color: #f0f0f0;
+  background-image: url('Cloud.jpg');
+  background-size: auto; 
+  padding: 75px;
+  color: #f0f0f0;
+}
+
+.student-form h2 {
+  margin-top: 0;
+}
+
+.student-form input {
+  width: 100%;
+  height: 200%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.student-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 20px;
+  margin: 4%; 
+  position: absolute;
+  top: 55%;
+  left: 45%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
